@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Đường kính của hình tròn là </p>
+    <p id="demo"></p>
+    <p>Chu vi của hình tròn là </p>
+    <p id="demotwo"></p>
+    <p>Diện tích của hình tròn là </p>
+    <p id="demothree"></p>
+<script>
+    let inputR;
+    
+    inputR = prompt('Nhập vào bán kính: ');
+    let r = parseInt(inputR);
+    let d = r*2;
+    let c = d * 3.14;
+    let s = r*r *3.14;
+    document.getElementById("demo").innerHTML =d;
+    document.getElementById("demotwo").innerHTML =c;
+    document.getElementById("demothree").innerHTML =s;
+</script>
+</body>
+</html>

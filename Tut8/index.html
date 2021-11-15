@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <input type="number" id="firstNumber">
+    <input type="number" id="secondNumber">
+    <br>
+    <br>
+    <button id="addButton">Addition(+)</button>
+    <button id="subButton">Subtraction(-)</button>
+   
+    <button id="multipleButton">Multiplication(*)</button>
+    
+    <button id="divisionButton">Division(/)</button>
+    <br>
+    <br>
+    Result <span id="result"></span>
+    <script>
+        let firstNumber, secondNumber;
+        let firstNumberInput = document.getElementById('firstNumber');
+        let secondNumberInput = document.getElementById('secondNumber');
+        let addButton = document.getElementById('addButton');
+        let subButton = document.getElementById('subButton');
+        let multipleButton = document.getElementById('mutipleButton');
+        let divisionButton = document.getElementById('divisionButton');
+        let result = document.getElementById('result');
+        function getNumbers(){
+            firstNumber = parseFloat(firstNumberInput.value);
+            secondNumber = parseFloat(secondNumberInput.value);
+        }
+        addButton.addEventListener('click', function(){
+            getNumbers();
+            result.innerText = "Addition: "+ (firstNumber+secondNumber);
+        });
+    </script>
+</body>
+</html>

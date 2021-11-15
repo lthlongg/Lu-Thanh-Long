@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Số tiền ban đầu là</p>
+    <p id="money"></p>
+    <p>Lãi suất sau 1 năm là </p>
+    <p id="demotwo"></p>
+    <p>Số tiền có được sau n năm là</p>
+    <p id = "demothree"></p>
+    <script>
+        let money;
+        let interest;
+        let years;
+        let withdraw;
+        let withdrawafter;
+        money = prompt("Nhập vào số tiền ban đầu");
+        interest = prompt("Nhập vào lãi suất");
+        years = prompt("Nhập vào năm");
+        let m = parseInt(money);
+        let i = parseFloat(interest);
+        let y = parseInt(years);
+        let w = parseFloat(withdraw);
+        let wd = parseFloat(withdrawafter);
+        w = m * i/100;
+        wd = m + (y*w);
+        document.getElementById("money").innerHTML = m;
+        document.getElementById("demotwo").innerHTML =w;
+        document.getElementById("demothree").innerHTML =wd;
+    </script>
+</body>
+</html>
