@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Game tank</h1>
+        <div class="arena">
+            <div id="tank"></div>
+            <div id="boom"></div>
+            <div id="over"></div>            
+        </div>
+    
+    <script>
+    $(function () {
+    var x = y = 0;
+    let xBoom = Math.floor(Math.random() * 10) * 19;
+    let yBoom = Math.floor(Math.random() * 10) * 19;
+    let tank = $("#tank");
+    let boom = $("#boom");
+    let over = $("#over");
+    let step = 19;
+    boom.css({
+        "top": yBoom + "px",
+        "left": xBoom + "px"
+    })
+
+    function checkBoom() {
+        if (tank.css("top") == boom.css("top") &&
+            tank.css("left") == boom.css("left")) {
+    setTimeout(restarGame, 2000)
+            boom.hide();
+            over.css({
+                "background": "url('css/gameover.jpg')",
+                "background-size": "cover",
+                "width": "400px",
+                "height": "300px "
+            
+            });
+            
+        }
+    }
+
+    function restarGame() {
+        location.reload()
+    }
+    $("#topBtn").click(function () {
+        if (y > 0) {
+            y -= step
+        } else y -= 0
+        $("#tank").css("top", y + "px")
+        checkBoom()
+    })
+    $("#bottomBtn").click(function () {
+        if (y+19 <190) {
+            y += step
+        } else y += 0
+        $("#tank").css("top", y + "px")
+        checkBoom()
+    })
+    $("#leftBtn").click(function () {
+        if (x > 0) {
+            x -= step
+        } else x -= 0
+        $("#tank").css("left", x + "px")
+        checkBoom()
+    })
+    $("#rightBtn").click(function () {
+        if (x+19<190) {
+            x += step
+        } else x += 0
+        $("#tank").css("left", x + "px")
+        checkBoom()
+    })
+})
+
+    </script>
+        
+        <div class="button">
+        <button id="topBtn"><img src="css/bottom.jpg" alt="TOP"></button>
+        <button id="bottomBtn"><img src="css/bottom.jpg" alt="BOTTOM"></button>
+        <button id="leftBtn"><img src="css/bottom.jpg" alt="LEFT"></button>
+        <button id="rightBtn"><img src="css/bottom.jpg" alt="RIGHT"></button>
+    </div>   
+</body>
+</html>
